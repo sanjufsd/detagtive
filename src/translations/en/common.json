@@ -1,0 +1,30 @@
+
+{
+  "profile": {
+    "new_profile": "New User",
+    "name": "Name",
+    "last_login": "Last Login",
+    "new_users":  "New users",
+    "confirm_delete":  "Are you sure?",
+    "select_profile":  "Please select profile",
+    "company_and_contact": "Company & Contact",
+    "language_and_region": "Language & Region"
+  },
+  "dashboard": {
+    "dashboard": "DashBoard",
+    "profile": "Profile",
+    "notification":"Notification",
+    "tags": "TAGs",
+    "profile_templates": "Profile Templates",
+    "zone": "Zones",
+    "floorplans": "Floorplans",
+    "processes": "Processes",
+    "group_plans": "Group Plans",
+    "finder": "Finder",
+    "reports":"Reports",
+    "jobs": "Jobs",
+    "clients": "Clients",
+    "firmware": "Firmware",
+    "monitoring": "Monitoring"
+  }
+}

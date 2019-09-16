@@ -1,0 +1,29 @@
+{
+	"profile": {
+		"new_profile": "Neuer Benutzer",
+		"name": "Name",
+		"last_login": "Letzte Anmeldung",
+		"new_users":  "Neue Nutzer",
+		"confirm_delete":  "Bist du sicher?",
+		"select_profile":  "Bitte Profil auswählen",
+		"company_and_contact": "Unternehmen & Kontakt",
+		"language_and_region": "Sprache & Region"
+	},
+	"dashboard": {
+		"dashboard": "Instrumententafel",
+		"profile": "Profil",
+		"notification":"Benachrichtigung",
+		"tags": "Stichworte",
+		"profile_templates": "Profilvorlagen",
+		"zone": "Zonen",
+		"floorplans": "Grundrisse",
+		"processes": "Prozesse",
+		"group_plans": "Gruppenpläne",
+		"finder": "Finder",
+		"reports":"Berichte",
+		"jobs": "Arbeitsplätze",
+		"clients": "Kunden",
+		"firmware": "Firmware",
+		"monitoring": "Überwachung"
+	  }
+}
