@@ -40,7 +40,7 @@ class Profiles extends React.Component {
     this.state.userProfiles.forEach(obj => {
       items.push(
         <div
-          className={`profile-list ${(Object.keys(this.state.selectedProfile).length !== 0) && "selected"}`}
+          className={`profile-list ${(Object.keys(this.state.selectedProfile).length !== 0 && (obj["id"]===this.state.selectedProfile["id"])) && "selected"}`}
           onClick={() => this.handleProfileClick(obj)}
         >
           <div className="avatar">

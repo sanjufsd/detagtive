@@ -295,7 +295,9 @@
   .profile_list_wrapper {
     flex:2;
     background-color: #DFEEF8;
-
+    .selected{
+      background-color: #A6CFEC;
+    }
     .profile-header{
       display:flex;
       padding: 10px 0px 10px 0px;
@@ -319,6 +321,8 @@
       padding:1%;
       border-bottom: 1px solid aliceblue;
       cursor: pointer;
+
+
       .avatar{
         flex: 1;
         img{

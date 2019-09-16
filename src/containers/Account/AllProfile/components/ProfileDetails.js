@@ -237,7 +237,7 @@ class ProfileDetails extends React.Component {
         <div className="user-header-action">
           <div className="user-name-details">
             {this.props.mode === "create" ? (
-              <h3>{t("profile.name")}</h3>
+              <h3>{t("profile.new_profile")}</h3>
             ) : (
               <React.Fragment>
                 <h3>{userDetails.Name}</h3>
