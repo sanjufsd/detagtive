@@ -7,7 +7,6 @@ import {
   FaCheckCircle,
   FaTimesCircle,
   FaChevronDown,
-  FaChevronUp,
   FaGlobeAmericas,
   FaUserAlt
 } from "react-icons/fa";
@@ -30,7 +29,7 @@ class ProfileDetails extends React.Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
     userDetails: PropTypes.array.isRequired,
-    mode:  PropTypes.string.isRequired
+    mode: PropTypes.string.isRequired
   };
   constructor(props) {
     super(props);
@@ -162,9 +161,9 @@ class ProfileDetails extends React.Component {
     return items;
   };
 
-  handleCancel = () =>{
-    this.setState({'mode':'show'})
-  }
+  handleCancel = () => {
+    this.setState({ mode: "show" });
+  };
   buildAccordian = type => {
     let headerInfo =
       type === "company"
@@ -215,7 +214,7 @@ class ProfileDetails extends React.Component {
   updateView = () => {
     this.setState({ mode: "edit" });
   };
-  
+
   profileAction = () => {
     this.props.addProfileActions(
       this.state.answers,
@@ -247,13 +246,18 @@ class ProfileDetails extends React.Component {
           </div>
           <div className="user-operations">
             {this.state.mode === "show" ? (
-              <div onClick={this.updateView}>
+              <div onClick={this.updateView} className="user-operation-icons">
                 <FaPen size={32} />
               </div>
             ) : (
               <React.Fragment>
-                <span onClick={this.handleCancel}><FaTimesCircle size={32} /></span>
-                <div onClick={this.profileAction}>
+                <span onClick={this.handleCancel}>
+                  <FaTimesCircle size={30} />
+                </span>
+                <div
+                  onClick={this.profileAction}
+                  className="user-operation-icons"
+                >
                   <FaCheckCircle size={32} />
                 </div>
               </React.Fragment>
@@ -269,7 +273,7 @@ class ProfileDetails extends React.Component {
           </div>
           <div className="details">{userProfile}</div>
         </div>
-        <div>
+        <div className="company-accordian">
           {companyAccordian}
           {languageAccordian}
         </div>

@@ -293,6 +293,13 @@
 .user-profile-wrapper {
   display:flex;
   .profile_list_wrapper {
+    height: 100vh;
+    overflow-y: scroll;
+    @media screen and (max-width: 600px) {
+      height: 100vh;
+      overflow-y: scroll;
+      width: 100%;
+    }
     flex:2;
     background-color: #DFEEF8;
     .selected{
@@ -325,9 +332,16 @@
 
       .avatar{
         flex: 1;
+        @media screen and (max-width: 600px) {
+          width: 20px;
+        }
         img{
           border-radius: 50%;
           padding:10%;
+
+          @media screen and (max-width: 600px) {
+            width: 95%;
+          }
         }
 
       }
@@ -335,6 +349,15 @@
         flex: 3;
         .header{
           font-size: 20px;
+          @media screen and (max-width: 600px) {
+            font-size: 12px;
+          }
+        }
+        .content{
+          @media screen and (max-width: 600px) {
+            word-break: break-all;
+            font-size: 10px;
+          }
         }
       }
       .last-login-wrapper {
@@ -346,6 +369,11 @@
   .profile-details-wrapper{
     flex:4
   }
+
+  @media screen and (max-width: 600px) {
+    padding-left: 0px;
+  }
+
 }
 
 
@@ -356,6 +384,12 @@
     flex-direction:row;
     .details{
       flex:1;
+
+      label{
+        @media screen and (max-width: 600px) {
+          font-weight: 900;
+        }
+      }
     }
     .avatar{
       //flex:1;
@@ -365,6 +399,10 @@
       border: 1px solid #fff;
       padding:10px;
       border-radius:3px;
+      @media screen and (max-width: 600px) {
+       width: 100px;
+       height: 100px;
+      }
       img{
         max-height: 200px;
       }
@@ -380,27 +418,61 @@
     justify-content: space-between;
     .user-name-details{
       flex: 1;
+
+      h3{
+        @media screen and (max-width: 600px) {
+          font-size: 15px;
+        }
+      }
     }
     .user-operations{
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+      }
       svg{
         cursor: pointer;
+        @media screen and (max-width: 600px) {
+          width: 20px;
+          margin-left: 10px;
+        }
       }
     }
   }
 
+.company-accordian{
+  label{
+    @media screen and (max-width: 600px) {
+      font-weight: 900;
+    }
+  }
+}
+
   .accrodian-header{
     display:flex;
     justify-content:space-between;
+    h4{
+      @media screen and (max-width: 600px) {
+        font-size: 7px;
+        font-weight: 900;
+      }
+    }
+
+    
   }
 }
 .user-values{
   padding-top: calc(0.375rem + 1px);
   padding-bottom: calc(0.375rem + 1px);
   margin-left: 50px;
+  @media screen and (max-width: 600px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left: 0px;
+  }
 }
 .required-field::after {
   content: "*";

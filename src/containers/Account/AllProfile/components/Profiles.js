@@ -4,9 +4,12 @@ import { connect } from "react-redux";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import ProfileDetails from "./ProfileDetails";
 import { addProfile, updateProfile ,deleteProfile } from "../../../../redux/actions/profileActions";
+import {userScroll} from '../../../../../src/shared/scrollData'
 import {withTranslation} from 'react-i18next'
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
+import InfiniteScroll from "react-infinite-scroller"
+
 class Profiles extends React.Component {
   static propTypes = {
     t: PropTypes.func.isRequired,
@@ -18,14 +21,16 @@ class Profiles extends React.Component {
       userProfiles: props.userProfiles,
       selectedProfile: {},
       mode: "create",
-      isSelected: false
+      isSelected: false,
+      userScroll: userScroll,
+      hasMore: true
     };
   }
 
   static getDerivedStateFromProps(nextState, nextProps) {
     if(nextState.userProfiles.length !== nextProps.userProfiles){
       return {
-        userProfiles: nextState.userProfiles,
+        userProfiles: nextProps.userProfiles,
       };
     }
 
@@ -90,6 +95,14 @@ class Profiles extends React.Component {
   addNewProfile = () =>{
     this.setState({mode:'create',selectedProfile:{}})
   }
+
+  fetchMoreData = () => {
+      let newstate = this.state.userProfiles.concat(this.state.userScroll)
+      this.setState({
+        userProfiles: newstate,
+        hasMore: false
+      })
+  };
   render() {
     const { t } = this.props;
     let profileList = this.buildProfileList();
@@ -109,7 +122,15 @@ class Profiles extends React.Component {
             <div> {t('profile.name')}</div>
             <div>{t('profile.last_login')}</div>
           </div>
-          {profileList}
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={this.fetchMoreData}
+            hasMore={this.state.hasMore}
+            loader={<div className="loader" key={0}>Loading ...</div>}
+        >
+            {profileList}
+        </InfiniteScroll>
+          {/* {profileList} */}
         </div>
 
         <div className="profile-details-wrapper">
