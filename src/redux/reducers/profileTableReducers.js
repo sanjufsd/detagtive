@@ -2,8 +2,7 @@ import { users } from "../../../src/containers/Account/AllProfile/components/dat
 import {
   ADD_PROFILE,
   DELETE_PROFILE,
-  UPDATE_PROFILE,
-  SELECTED_PROF
+  UPDATE_PROFILE
 } from "../actions/profileActions";
 
 const initialState = users;
@@ -28,16 +27,6 @@ export default function(state = initialState, action) {
         }
         return profile;
       });
-      case SELECTED_PROF:
-          return state.map(profile => {
-            const { id, name, email, company } = action.payload;
-            if (profile.id === id) {
-              profile.name = name;
-              profile.grade = email;
-              profile.company.name = company.name;
-            }
-            return profile;
-          });
     default:
       return state;
   }
